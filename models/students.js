@@ -1,7 +1,7 @@
 'use strict';
 
 const { DataTypes } = require('sequelize');
-const db = require('./database');
+const db = require('../database');
 
 const Students = db.define('students', {
   firstname: {
@@ -25,14 +25,14 @@ const Students = db.define('students', {
   email: {
     type: DataTypes.NUMBER,
     unique: true
-  },
+  }
+}, {
+  timestamps: false,
   getterMethods: {
     fullName() {
       return [this.firstname, this.lastname].join(' ');
     }
-  },
-}, {
-  timestamps: false
+  }
 });
 
 module.exports = Students;

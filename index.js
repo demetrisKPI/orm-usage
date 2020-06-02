@@ -9,6 +9,8 @@ const server = express();
 
 server.use(bodyParser.json());
 
+server.get('/', (req, res) => res.send('Here'));
+
 db
   .authenticate()
   .then(() => {

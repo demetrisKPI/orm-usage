@@ -4,11 +4,11 @@ const { DataTypes } = require('sequelize');
 const db = require('../database');
 
 const Students = db.define('students', {
-  firstname: {
+  firstName: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  lastname: {
+  lastName: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -19,18 +19,18 @@ const Students = db.define('students', {
     type: DataTypes.STRING
   },
   contactNumber: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.STRING,
     unique: true
   },
   email: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.STRING,
     unique: true
   }
 }, {
   timestamps: false,
   getterMethods: {
     fullName() {
-      return [this.firstname, this.lastname].join(' ');
+      return [this.firstName, this.lastName].join(' ');
     }
   }
 });

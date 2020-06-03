@@ -7,10 +7,6 @@ const db = require('./database');
 const PORT = process.env.PORT || 3000;
 const server = express();
 
-server.use(bodyParser.json());
-
-server.get('/', (req, res) => res.send('Here'));
-
 db
   .authenticate()
   .then(() => {
@@ -19,4 +15,9 @@ db
   })
   .catch(err => console.log('Error: ' + err));
 
-server.listen(3000, () => console.log(`Server listening on port ${PORT}!`));
+server.use(bodyParser.json());
+
+server.get('/', (req, res) => res.send('home'));
+server.use('/students', require('./routes/students'));
+
+server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`));

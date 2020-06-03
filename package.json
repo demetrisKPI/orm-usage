@@ -5,19 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "debug": "nodemon --inspect index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/demetrisKPI/orm-usage.git"
   },
-  "author": "",
+  "author": "Muzhenko_Dmytro",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/demetrisKPI/orm-usage/issues"
   },
   "homepage": "https://github.com/demetrisKPI/orm-usage#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "pg": "^8.2.1",

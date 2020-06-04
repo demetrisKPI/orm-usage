@@ -3,17 +3,17 @@
 const axios = require('axios');
 
 const student = {
-  firstName: 'bob',
-  lastName: 'marley',
+  firstName: 'tom',
+  lastName: 'cash',
   group: {
     name: 'II-22'
   },
   faculty: {
-    name: 'FFFA',
-    contactNumber: '+1'
+    name: 'FFF',
+    contactNumber: '+2'
   },
-  contactNumber: '+3',
-  email: 'me@me.me'
+  contactNumber: '+4',
+  email: 'them@me.me'
 };
 
 const testAdd = async data => {
@@ -26,5 +26,5 @@ const testAdd = async data => {
 };
 
 testAdd(student)
-  .then(res => console.table(res))
+  .then(res => console.dir(res))
   .catch(err => console.log(err));

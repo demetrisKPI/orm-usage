@@ -3,6 +3,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../database');
 
+// Define faculty model
 const Faculties = db.define('faculties', {
   name: {
     type: DataTypes.STRING,

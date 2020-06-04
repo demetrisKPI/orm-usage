@@ -2,7 +2,6 @@
 
 const { DataTypes } = require('sequelize');
 const db = require('../database');
-
 const Groups = db.define('groups', {
   name: {
     type: DataTypes.STRING,

@@ -2,9 +2,10 @@
 
 const { DataTypes } = require('sequelize');
 const db = require('../database');
-const Groups = require('../models/groups');
-const Faculties = require('../models/faculties');
+const Groups = require('./groups');
+const Faculties = require('./faculties');
 
+// Define student model
 const Students = db.define('students', {
   firstName: {
     type: DataTypes.STRING,
@@ -31,7 +32,13 @@ const Students = db.define('students', {
   }
 });
 
+// Define entity relationships
 Students.belongsTo(Groups);
 Students.belongsTo(Faculties);
+
+Groups.hasMany(Students);
+Groups.belongsTo(Faculties);
+
+Faculties.hasMany(Groups);
 
 module.exports = Students;

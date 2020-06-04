@@ -6,13 +6,7 @@ const db = require('../database');
 const Groups = db.define('groups', {
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
-  },
-  faculty: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: false
   }
 }, {
   timestamps: false

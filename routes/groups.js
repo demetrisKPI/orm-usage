@@ -11,19 +11,4 @@ router.get('/', (req, res) =>
     .catch(err => console.log(err))
 );
 
-//Add new group
-router.post('/add', (req, res) => {
-  const { name, faculty } = req.body;
-  Groups
-    .create({
-      name,
-      faculty
-    })
-    .then(data => res.json({ data }))
-    .catch(err => {
-      console.log(err);
-      res.sendStatus(400);
-    });
-});
-
 module.exports = router;

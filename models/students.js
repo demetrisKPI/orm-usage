@@ -2,6 +2,8 @@
 
 const { DataTypes } = require('sequelize');
 const db = require('../database');
+const Groups = require('../models/groups');
+const Faculties = require('../models/faculties');
 
 const Students = db.define('students', {
   firstName: {
@@ -11,12 +13,6 @@ const Students = db.define('students', {
   lastName: {
     type: DataTypes.STRING,
     allowNull: false
-  },
-  group: {
-    type: DataTypes.STRING
-  },
-  faculty: {
-    type: DataTypes.STRING
   },
   contactNumber: {
     type: DataTypes.STRING,
@@ -34,5 +30,8 @@ const Students = db.define('students', {
     }
   }
 });
+
+Students.belongsTo(Groups);
+Students.belongsTo(Faculties);
 
 module.exports = Students;

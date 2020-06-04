@@ -2,6 +2,8 @@
 
 const router = require('express').Router();
 const Students = require('../models/students');
+const Groups = require('../models/groups');
+const Faculties = require('../models/faculties');
 
 //Get list of students
 router.get('/', (req, res) =>
@@ -25,10 +27,12 @@ router.post('/add', (req, res) => {
     .create({
       firstName,
       lastName,
-      group,
-      faculty,
       contactNumber,
-      email
+      email,
+      group,
+      faculty
+    }, {
+      include: [ Groups, Faculties ]
     })
     .then(data => res.json({ data }))
     .catch(err => {

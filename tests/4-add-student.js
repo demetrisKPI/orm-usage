@@ -2,22 +2,18 @@
 
 const axios = require('axios');
 
-const testGet = async () => {
-  try {
-    const res = await axios.get('http://localhost:3000/students/');
-    return res.data.students;
-  } catch (err) {
-    throw new Error(err);
-  }
-};
-
 const student = {
   firstName: 'bob',
   lastName: 'marley',
-  group: 'II-22',
-  faculty: 'FFFA',
-  contactNumber: '+380',
-  email: 'they@me.me'
+  group: {
+    name: 'II-22'
+  },
+  faculty: {
+    name: 'FFFA',
+    contactNumber: '+1'
+  },
+  contactNumber: '+3',
+  email: 'me@me.me'
 };
 
 const testAdd = async data => {
@@ -30,9 +26,5 @@ const testAdd = async data => {
 };
 
 testAdd(student)
-  .then(res => console.table(res))
-  .catch(err => console.log(err));
-
-testGet()
   .then(res => console.table(res))
   .catch(err => console.log(err));

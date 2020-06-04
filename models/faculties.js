@@ -6,12 +6,11 @@ const db = require('../database');
 const Faculties = db.define('faculties', {
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: false
   },
   contactNumber: {
     type: DataTypes.STRING,
-    unique: true
+    allowNull: false
   }
 }, {
   timestamps: false

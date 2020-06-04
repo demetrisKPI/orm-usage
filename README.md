@@ -51,6 +51,6 @@ const db = new Sequelize('db_name', 'user_name', 'password', {
 
   Job to do:
 + avoid copying identical groups and faculties
-+ implement
++ implement relations groups->students, faculties->groups
   
 Project coordinator: dimakpimuzhenko@gmail.com

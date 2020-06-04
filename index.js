@@ -19,5 +19,7 @@ server.use(bodyParser.json());
 
 server.get('/', (req, res) => res.send('home'));
 server.use('/students', require('./routes/students'));
+server.use('/groups', require('./routes/groups'));
+server.use('/faculties', require('./routes/faculties'));
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!`));

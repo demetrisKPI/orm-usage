@@ -26,5 +26,5 @@ const testAdd = async data => {
 };
 
 testAdd(student)
-  .then(res => console.dir(res))
+  .then(res => console.table(res))
   .catch(err => console.log(err));

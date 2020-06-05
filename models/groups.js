@@ -2,6 +2,8 @@
 
 const { DataTypes } = require('sequelize');
 const db = require('../database');
+
+// Define group model
 const Groups = db.define('groups', {
   name: {
     type: DataTypes.STRING,
